@@ -68,11 +68,11 @@ if(isset($_POST["submit"]) && isset($_POST['kod'])) {
             </div>
             <div class="input-group mb-3">
                 <input type="file" class="form-control" name="rabattbrev" id="rabattbrev">
-                <span class="input-group-text">Rabattberv</span>
+                <span class="input-group-text">Rabattbrev</span>
             </div>
             <div class="input-group mb-3">
                 <input type="file" class="form-control" name="nettoprislista" id="nettoprislista">
-                <span class="input-group-text">Nettoprislista</span>
+                <span class="input-group-text">Nettoprislista*</span>
             </div>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" name="kod" id="kod">
@@ -81,18 +81,18 @@ if(isset($_POST["submit"]) && isset($_POST['kod'])) {
             <input class="btn btn-primary" type="submit" value="Ladda upp" name="submit">
             </form>
             <p>
-
+            * Nettoprislista är inte obligtorisk. Nettoprislistan används för avvikande priser mot rabattbrevet för enskilda produkter.
             </p>
             <div>
             <p>
-            Standarden nedan accepteras alltid, önskas annan standard kontakta avtalsansvarig.
+            Standarden nedan accepteras alltid, önskas annan standard kontakta avtalsansvarig. <br>
             </p>
                 <p><span style="font-size: xx-large;">Format bruttoprislista, rabattbrev, nettoprislista</span></p>
                 <p>&nbsp;</p>
                 <p><h3>Filformat bruttoprislista (GNP)</h3></p>
                 <p>
                 Fältseparator: Semikolon<br> 
-                Filformat: text<br>
+                Filformat: text (.txt / .csv)<br>
                 Encoding: UTF-8<br>
                 Radbrytningsstandard: LF(#10)</p>
                 <p>&nbsp;</p>
@@ -137,12 +137,13 @@ if(isset($_POST["submit"]) && isset($_POST['kod'])) {
                     </tr>
                     </tbody>
                 </table>
+                <a href="exempel/bruttoprislista.csv" class="btn btn-secondary">Exempelfil för bruttoprislista</a>
                 </p>
 
                 <p><h3>Filformat rabattbrev</h3></p>
                 <p>
                 Fältseparator: Semikolon<br> 
-                Filformat: text<br>
+                Filformat: text (.txt / .csv)<br>
                 Encoding: UTF-8<br>
                 Radbrytningsstandard: LF(#10)</p>
                 <p>&nbsp;</p>
@@ -163,11 +164,12 @@ if(isset($_POST["submit"]) && isset($_POST['kod'])) {
                     </tr>
                     </tbody>
                 </table>
+                <a href="exempel/rabattbrev.csv" class="btn btn-secondary">Exempelfil för rabattbrev</a>
                 </p>
                 <p><h3>Filformat Nettoprislista</h3></p>
                 <p>
                 Fältseparator: Semikolon<br> 
-                Filformat: text<br>
+                Filformat: text (.txt / .csv)<br>
                 Encoding: UTF-8<br>
                 Radbrytningsstandard: LF(#10)</p>
                 <p>&nbsp;</p>
@@ -192,9 +194,15 @@ if(isset($_POST["submit"]) && isset($_POST['kod'])) {
                     </tr>
                     </tbody>
                 </table>
+                <a href="exempel/nettoprislista.csv" class="btn btn-secondary">Exempelfil för nettoprislista</a>
                 </p>
-                <p>&nbsp;</p>
-                </div>
+            </div>
+            <p>
+            För tekniska frågor vid integrering kontakta: <br>
+            Martin Harari Thuresson<br>
+            <a href="mailto:martin.harari-thuresson@molndal.se">martin.harari-thuresson@molndal.se</a><br>
+            <a href="tel:+46723175800">+46723175800</a>
+            </p>
         </div>
     </body>
 </html>

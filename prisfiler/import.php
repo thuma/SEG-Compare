@@ -122,6 +122,7 @@ function uppdatera_brutto($lev){
         $headers = fgetcsv($handle, 1000, ";");
         $ordnad = array();
         $rubriker = array("Artikelnummer","Benämning","Enhet","Förpackningsstorlek","Materialgrupp","GN-Pris","Prisdatum","Lagerförd");
+        $headers[0] = str_replace("\xEF\xBB\xBF",'',$headers[0]);
         foreach($rubriker as $rubrik){
             $kollumn = array_search($rubrik, $headers);
             if($kollumn === false){
@@ -169,6 +170,7 @@ function uppdatera_rabatt($lev){
         $headers = fgetcsv($handle, 1000, ";");
         $ordnad = array();
         $rubriker = array("Materialgrupp","Rabatt");
+        $headers[0] = str_replace("\xEF\xBB\xBF",'',$headers[0]);
         foreach($rubriker as $rubrik){
             $kollumn = array_search($rubrik, $headers);
             if($kollumn === false){
@@ -180,11 +182,6 @@ function uppdatera_rabatt($lev){
         while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
             $Materialgrupp = $data[$ordnad["Materialgrupp"]];
             $Rabatt = str_replace(",", ".",$data[$ordnad["Rabatt"]]);
-            if( 
-                str_contains($Rabatt,',') === false
-            ){
-                $Rabatt = ((float)$Rabatt) / 10;
-            }
             try {
                 $stmt->execute();
             } catch (Exception $e) {
@@ -217,6 +214,7 @@ function uppdatera_netto($lev){
         $headers = fgetcsv($handle, 1000, ";");
         $ordnad = array();
         $rubriker = array("Artikelnummer","Pris","Prisdatum");
+        $headers[0] = str_replace("\xEF\xBB\xBF",'',$headers[0]);
         foreach($rubriker as $rubrik){
             $kollumn = array_search($rubrik, $headers);
             if($kollumn === false){

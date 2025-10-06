@@ -131,28 +131,37 @@ $pristabellsumma = "SELECT 'Summa' as Summa, SUM(RexPris),SUM(AhlsellPris),SUM(S
   <pre>3733820,24
 3745050,5
 3766000,10</pre>
-  <p>
-    <b>*Notera att denna jämförelse inte har alla prisdata tillgängliga idag.</b>
-  </p>
+
+<h2>Importera listan i webshopparna</h2>
+<p>För att imporera listan med produkter för att göra en punchout gör följande:</p>
+<ol>
+  <li>Bekräfta att du har öppnat punchout webshopen för leverantören via Proceedo</li>
+  <li>Kopiera listan nedan för vald leverantör.</li>
+  <li>Klicka på leveantören och klistra in på leveantörens punchout webshop.</li>
+</ol>
 <h3><a href="https://www.elektroskandia.se/snabborder" target="_blank">Sonepar</a></h3>
+<p>Att klistra in på Sonepar webshopen:</p>
 <pre><?php
   foreach ($listdata as $rad) {
     echo $rad["antal"]." ".$rad["enummer"]."\n";
   }
   ?></pre>
 <h3><a href="https://www.rexel.se/swe/newQuickorder" target="_blank">Rexel</a></h3>
+<p>I webshopen hos Rexel tryck på: "Klipp & Klistra in din order" och klistra in:</p>
 <pre><?php
   foreach ($listdata as $rad) {
     echo $rad["enummer"].", ".$rad["antal"]."\n";
   }
   ?></pre>
-<h3><a href="https://www.solar.se/se-webshop/" target="_blank">Solar</a></h3>
+<h3><a href="https://www.solar.se/new-cart-page/" target="_blank">Solar</a></h3>
+<p>I webshopen hos solar tryck på: "Lägg till flera rader" och klistra in:</p>
 <pre><?php
   foreach ($listdata as $rad) {
     echo $rad["enummer"].", ".$rad["antal"]."\n";
   }
   ?></pre>
 <h3><a href="https://www.ahlsell.se/mina-sidor/bestall-via-excel/" target="_blank">Ahlsell</a></h3>
+<p>Att klistra in på Ahlsell webshopen:</p>
 <pre><?php
   foreach ($listdata as $rad) {
     echo $rad["enummer"]."\t".$rad["antal"]."\n";
